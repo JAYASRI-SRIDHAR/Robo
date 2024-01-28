@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.1 on win32)" generated="2024-01-28T00:35:05.112729" rpa="false" schemaversion="5">
+<suite id="s1" name="MyTest" source="C:\Users\jayas\PycharmProjects\MyTest">
+<suite id="s1-s1" name="Test" source="C:\Users\jayas\PycharmProjects\MyTest\Test">
+<suite id="s1-s1-s1" name="UI" source="C:\Users\jayas\PycharmProjects\MyTest\Test\UI">
+<suite id="s1-s1-s1-s1" name="Ebay" source="C:\Users\jayas\PycharmProjects\MyTest\Test\UI\Ebay">
+<suite id="s1-s1-s1-s1-s1" name="ProdSearch" source="C:\Users\jayas\PycharmProjects\MyTest\Test\UI\Ebay\ProdSearch.robot">
+<test id="s1-s1-s1-s1-s1-t1" name="Prod Search and Filter" line="14">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2024-01-28T00:35:05.431935" level="INFO">Opening browser 'chrome' to base url 'https://www.ebay.com/'.</msg>
+<arg>${ebayurl}</arg>
+<arg>${browsergc}</arg>
+<arg>${gcpath}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-01-28T00:35:05.431240" elapsed="3.837198"/>
+</kw>
+<kw name="Ebay search">
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-01-28T00:35:09.270440" elapsed="0.131373"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>Results</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2024-01-28T00:35:09.401813" elapsed="0.001048"/>
+</kw>
+<kw name="Search for product" owner="EbaySearchPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-28T00:35:09.402942" level="INFO">Typing text 'Towel' into text field '//input[@type="text"]'.</msg>
+<arg>//input[@type="text"]</arg>
+<arg>${Search}</arg>
+<arg>10</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-28T00:35:09.402942" elapsed="0.118731"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-01-28T00:35:09.522907" level="INFO">Sending key(s) ('RETURN',) to //input[@type="submit"] element.</msg>
+<msg time="2024-01-28T00:35:12.349913" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2024-01-28T00:35:12.349913" level="INFO">Releasing special key RETURN.</msg>
+<arg>//input[@type="submit"]</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-01-28T00:35:09.521673" elapsed="2.947782"/>
+</kw>
+<status status="PASS" start="2024-01-28T00:35:09.402942" elapsed="3.066513"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-01-28T00:35:12.657165" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Results/selenium-screenshot-17.png"&gt;&lt;img src="Results/selenium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-01-28T00:35:12.469455" elapsed="0.188835"/>
+</kw>
+<kw name="Filter the product" owner="EbayFilter">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-01-28T00:35:12.699513" level="INFO">Element '//*[contains(text(),' results for ')]//span[contains(text(),'Towel')]' is displayed.</msg>
+<arg>//*[contains(text(),' results for ')]//span[contains(text(),'${Search}')]</arg>
+<arg>3</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-28T00:35:12.658433" elapsed="0.042066"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//span[@class='btn__cell']/span[contains(text(),'Condition')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-28T00:35:12.700499" elapsed="0.044086"/>
+</kw>
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2024-01-28T00:35:12.744585" level="INFO">Simulating Mouse Over on element '//span[@class='btn__cell']/span[contains(text(),'Condition')]'.</msg>
+<arg>//span[@class='btn__cell']/span[contains(text(),'Condition')]</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2024-01-28T00:35:12.744585" elapsed="0.369510"/>
+</kw>
+<kw name="Mouse Down" owner="SeleniumLibrary">
+<msg time="2024-01-28T00:35:13.115370" level="INFO">Simulating Mouse Down on element '//span[@class='btn__cell']/span[contains(text(),'Condition')]'.</msg>
+<arg>//span[@class='btn__cell']/span[contains(text(),'Condition')]</arg>
+<doc>Simulates pressing the left mouse button on the element ``locator``.</doc>
+<status status="PASS" start="2024-01-28T00:35:13.115098" elapsed="0.343994"/>
+</kw>
+<kw name="Mouse Up" owner="SeleniumLibrary">
+<msg time="2024-01-28T00:35:13.460164" level="INFO">Simulating Mouse Up on element '//span[@class='btn__cell']/span[contains(text(),'Condition')]'.</msg>
+<arg>//span[@class='btn__cell']/span[contains(text(),'Condition')]</arg>
+<doc>Simulates releasing the left mouse button on the element ``locator``.</doc>
+<status status="PASS" start="2024-01-28T00:35:13.460100" elapsed="0.327472"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-28T00:35:13.787572" level="INFO">Clicking element '//*[@id="s0-53-16-5-4[0]-64[1]-19-content-menu"]/li[2]/a'.</msg>
+<arg>//*[@id="s0-53-16-5-4[0]-64[1]-19-content-menu"]/li[2]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-28T00:35:13.787572" elapsed="1.925944"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>//*[@id="s0-53-16-5-4[0]-64[1]-19-content-menu"]/li[2]/a/span/span[2]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-01-28T00:35:15.713516" elapsed="0.036301"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-01-28T00:35:15.945357" level="INFO">Current page contains text 'results for Towel'.</msg>
+<arg>results for Towel</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-01-28T00:35:15.750814" elapsed="0.194543"/>
+</kw>
+<status status="PASS" start="2024-01-28T00:35:12.658433" elapsed="3.288106"/>
+</kw>
+<status status="PASS" start="2024-01-28T00:35:09.269443" elapsed="6.677096"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-01-28T00:35:15.947612" elapsed="2.249113"/>
+</kw>
+<doc>Simple Filter</doc>
+<tag>functional</tag>
+<status status="PASS" start="2024-01-28T00:35:05.430011" elapsed="12.767023"/>
+</test>
+<status status="PASS" start="2024-01-28T00:35:05.144310" elapsed="13.057458"/>
+</suite>
+<status status="PASS" start="2024-01-28T00:35:05.141955" elapsed="13.064310"/>
+</suite>
+<status status="PASS" start="2024-01-28T00:35:05.139912" elapsed="13.068678"/>
+</suite>
+<status status="PASS" start="2024-01-28T00:35:05.137688" elapsed="13.077182"/>
+</suite>
+<status status="PASS" start="2024-01-28T00:35:05.114794" elapsed="13.102608"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">functional</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="MyTest">MyTest</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Test">MyTest.Test</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="UI">MyTest.Test.UI</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1-s1" name="Ebay">MyTest.Test.UI.Ebay</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1-s1-s1" name="ProdSearch">MyTest.Test.UI.Ebay.ProdSearch</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
